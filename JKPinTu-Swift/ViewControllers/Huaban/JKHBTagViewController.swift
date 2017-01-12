@@ -98,7 +98,6 @@ final class JKHBTagViewController: UITableViewController {
         let tagName = tag.tag_name
         let pinCountString = " 共\(tag.pin_count!)张"
         let displayString = tagName! + pinCountString
-        SwiftyBeaver.debug(pinCountString)
 
 
         let attributedString = NSMutableAttributedString(string: displayString, attributes: [NSFontAttributeName:UIFont.systemFont(ofSize: 17)])

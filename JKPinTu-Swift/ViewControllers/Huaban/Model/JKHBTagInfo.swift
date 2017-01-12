@@ -26,7 +26,6 @@ class JKHBTagInfo: NSObject {
             let name = (item as! NSDictionary)["tag_name"] as! String
             let count = (item as! NSDictionary)["pin_count"] as! Int
                 
-            print("count======",count)
             
             let tag = JKHBTagInfo(name: name, count: count)
             objs.append(tag)
