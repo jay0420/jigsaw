@@ -69,7 +69,7 @@ class GameView: UIView {
     }
     
     /// 游戏类型
-    var gameMode:JKGameMode = .normal{
+    var gameMode:JKGameMode = .swapping{
         
         didSet{
             self.resetViews()

@@ -9,6 +9,7 @@
 import UIKit
 
 class OtherViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
+    let photoTotalNumber = 5
 
     @IBOutlet weak var table: UITableView!
     
@@ -24,7 +25,9 @@ class OtherViewController: BaseViewController,UITableViewDelegate,UITableViewDat
     // UITableViewDataSource Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 4
+        return     photoTotalNumber
+
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

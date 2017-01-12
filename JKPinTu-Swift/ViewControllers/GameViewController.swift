@@ -12,7 +12,7 @@ import UIKit
 
 class GameViewController: BaseViewController {
     
-    
+    let photoTotalNumber = 5
     var gameView : GameView!
     var preView : UIImageView!
 
@@ -125,7 +125,7 @@ class GameViewController: BaseViewController {
     }
     
     func changePhotoClick(){
-        let index = arc4randomInRange(0, to: 4)
+        let index = arc4randomInRange(0, to: photoTotalNumber )
         let imageName = "00" + String(index)
         self.gameView.image = UIImage(named: imageName)
         self.preView.image = UIImage(named: imageName)    }
@@ -146,7 +146,7 @@ class GameViewController: BaseViewController {
     func checkGameOver(_ button:UIButton){
         
         if(self.gameView.checkGameOver() == true){
-            button.setTitle("恭喜拼图成功，游戏结束", for: UIControlState())
+            button.setTitle("恭喜成功", for: UIControlState())
         }else{
             button.setTitle("check again", for: UIControlState())
         }

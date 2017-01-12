@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import MJRefresh
+import SwiftyBeaver
 
 final class JKHBTagViewController: UITableViewController {
 
@@ -95,11 +96,16 @@ final class JKHBTagViewController: UITableViewController {
         let tag = self.tags[indexPath.row]
         
         let tagName = tag.tag_name
-        let pinCountString = " 共\(tag.pin_count)张"
+        let pinCountString = " 共\(tag.pin_count!)张"
         let displayString = tagName! + pinCountString
+        SwiftyBeaver.debug(pinCountString)
+
+
         let attributedString = NSMutableAttributedString(string: displayString, attributes: [NSFontAttributeName:UIFont.systemFont(ofSize: 17)])
+
         attributedString.setAttributes([NSFontAttributeName:UIFont.systemFont(ofSize: 11),NSForegroundColorAttributeName:UIColor.gray], range: NSMakeRange((tagName?.characters.count)!, pinCountString.characters.count))
         cell?.textLabel?.attributedText = attributedString
+
         return cell!
     }
     
