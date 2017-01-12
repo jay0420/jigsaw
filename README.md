@@ -1,4 +1,4 @@
-# JKPinTu-Swift
+
 现学现做的第一个swift版本拼图游戏demo
 
 常规模式，对换模式任你选择，<p>
@@ -25,4 +25,3 @@
 
 
 
-另外这里是我的[创业项目](https://itunes.apple.com/app/id958163620)，下载支持一下吧，欢迎交流。
