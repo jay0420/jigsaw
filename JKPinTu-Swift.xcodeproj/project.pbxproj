@@ -518,7 +518,7 @@
 				INFOPLIST_FILE = "JKPinTu-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Bingjie.JKPinTu-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = JackWangPintu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "JKPinTu-Swift/JKPinTu-Swift-Bridging-Header.h";
@@ -542,7 +542,7 @@
 				INFOPLIST_FILE = "JKPinTu-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Bingjie.JKPinTu-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = JackWangPintu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "JKPinTu-Swift/JKPinTu-Swift-Bridging-Header.h";

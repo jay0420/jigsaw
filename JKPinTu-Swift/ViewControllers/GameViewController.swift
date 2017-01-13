@@ -25,7 +25,7 @@ class GameViewController: BaseViewController {
         self.title = "拼图"
         
         let settingButton = UIBarButtonItem(title: "设置", style: .plain, target: self, action: #selector(GameViewController.settingButtonClick))
-        let refreshButton = UIBarButtonItem(title: "换图", style: .plain, target: self, action: #selector(GameViewController.changePhotoClick))
+        let refreshButton = UIBarButtonItem(title: "换图", style: .plain, target: self, action: #selector(GameViewController.gotoPhotoLibrary))
         let huabanButton = UIBarButtonItem(title: "网络", style: .plain, target: self, action: #selector(GameViewController.huabanClick))
         self.navigationItem.rightBarButtonItems = [huabanButton,refreshButton,settingButton]
         
@@ -128,7 +128,38 @@ class GameViewController: BaseViewController {
         let index = arc4randomInRange(0, to: photoTotalNumber )
         let imageName = "00" + String(index)
         self.gameView.image = UIImage(named: imageName)
-        self.preView.image = UIImage(named: imageName)    }
+        self.preView.image = UIImage(named: imageName)
+    }
+    
+    // 测试 从相册中取照片
+    func gotoPhotoLibrary(){
+        addImageAction()
+    }
+    
+    
+    func addImageAction(){
+        
+      
+        
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "拍照", style: .default, handler: { action -> Void in
+            let vc = UIImagePickerController()
+            vc.delegate = self
+            vc.sourceType = .camera
+            self.present(vc, animated: true, completion: nil)
+        }))
+        alertController.addAction(UIAlertAction(title: "从相册选择", style: .default, handler: { action -> Void in
+            let vc = UIImagePickerController()
+            vc.delegate = self
+            vc.sourceType = .photoLibrary
+            self.present(vc, animated: true, completion: nil)
+        }))
+        alertController.addAction(UIAlertAction(title: "取消", style: .cancel, handler: { action -> Void in
+            
+        }))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     
     func randomButton(){
         self.gameView.randomGrids()
@@ -152,4 +183,41 @@ class GameViewController: BaseViewController {
         }
     }
     
+}
+
+
+extension GameViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    
+    
+    
+        picker.dismiss(animated: true, completion: nil)
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            let newImage = self.dealWithImage(image as! UIImage)
+            self.gameView.image = newImage
+            self.preView.image = newImage
+        }
+       
+        
+        
+        
+        
+//        if let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage,
+//            let cropImage = selectedImage.resize(CGSizeMake(800, 800), contentMode: .ScaleAspectFill){
+//            selectedImages.append(cropImage)
+//            let imgView = UIImageView()
+//            imgView.image = cropImage
+//            imgView.frame.origin = currentImageOrigin
+//            imgView.frame.size = CGSizeMake(selectedImageWidth, selectedImageWidth)
+//            selectedImageTipLabel.hidden = true
+//            containerView.addSubview(imgView)
+//            
+//            currentImageOrigin = CGPointMake(imgView.frame.right+selectedImagePadding, imgView.frame.top)
+//            if currentImageOrigin.x + selectedImageWidth > containerView.frame.width{
+//                currentImageOrigin = CGPointMake(10, imgView.frame.bottom+selectedImagePadding)
+//            }
+//            
+//        }
+    }
 }

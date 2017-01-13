@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 import SwiftyBeaver
 
-let jk_log = SwiftyBeaver.self
+//let jk_log = SwiftyBeaver.self
+let jacklog = SwiftyBeaver.self
 
 
 let SCREEN_BOUNDS = UIScreen.main.bounds

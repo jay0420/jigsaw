@@ -147,10 +147,10 @@ class GameView: UIView {
         if nextGrid == nil{
             nextGrid = self.randomGridNearbyPlaceholder(placeholder)
         }
-        jk_log.debug("随机出来的点\(nextGrid?.location)  上次的点：\(self.lastPositions)")
+        jacklog.debug("随机出来的点\(nextGrid?.location)  上次的点：\(self.lastPositions)")
         
         if (self.lastPositions.contains((nextGrid?.location)!)) {
-            jk_log.debug("包含了前两次的点 重新再来")
+            jacklog.debug("包含了前两次的点 重新再来")
             nextGrid = self.randomGridNearbyPlaceholder(placeholder)
         }else{
             self.lastPositions.append((nextGrid?.location)!)
@@ -159,7 +159,7 @@ class GameView: UIView {
         if self.lastPositions.count > lastRandomSwapCount{
             self.lastPositions.removeFirst()
         }
-        jk_log.debug("随机结束，需要移动到这个点：\(nextGrid?.location)   记录：\(self.lastPositions)")
+        jacklog.debug("随机结束，需要移动到这个点：\(nextGrid?.location)   记录：\(self.lastPositions)")
         return nextGrid!
     }
     
@@ -324,7 +324,7 @@ class GameView: UIView {
             })
         }else{
             isMoving = false
-            jk_log.error(clickInfo)
+            jacklog.error(clickInfo)
         }
     }
     
@@ -538,7 +538,7 @@ class GameView: UIView {
             let string = "  \t \(temp2.sort) \t \( (temp2.location + 1) % self.numberOfRows == 0 ? "\n" : "" ) "
             return t + string
         }
-        jk_log.debug(debugs)
+        jacklog.debug(debugs)
     }
 }
 

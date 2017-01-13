@@ -73,7 +73,7 @@ final class JKHBImageListViewController: UICollectionViewController {
                     self.collectionView?.reloadData()
                     self.collectionView!.mj_header.endRefreshing()
                     self.collectionView!.mj_footer.endRefreshing()
-                    
+                
                 }
             case .failure(let error):
                 print(error)
@@ -152,6 +152,7 @@ final class JKHBImageListViewController: UICollectionViewController {
             
             (self.navigationController as! JKHBNavigationController).dismissClick({ [unowned self] () -> Void in
                 if((self.navigationController as! JKHBNavigationController).imageBlock != nil){
+                    jacklog.debug("\(image)")
                     (self.navigationController as! JKHBNavigationController).imageBlock!(image!)
                 }
             })

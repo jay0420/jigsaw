@@ -46,7 +46,6 @@ final class JKHBTagViewController: UITableViewController {
             
             switch response.result {
             case .success:
-                print("Validation Successful")
                 if let JSON = response.result.value {
 //                    print("JSON: \(JSON)")
                     let tempTags = JKHBTagInfo.parseDataFromHuaban(JSON as! Array)
@@ -132,10 +131,10 @@ class JKHBNavigationController:BaseNavigationController {
         return nav
     }
     
-    func dismiss(){
-        self.dismissClick { () -> Void in
-        }
-    }
+//    func dismiss(){
+//        self.dismissClick { () -> Void in
+//        }
+//    }
     //关键字冲突
     func dismissself(){
         self.dismissClick { () -> Void in

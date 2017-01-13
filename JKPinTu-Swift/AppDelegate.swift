@@ -20,10 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         SwiftyBeaverConfig()
-        jk_log.debug(self)
-        jk_log.error(self)
-        jk_log.info(self)
-        jk_log.warning(self)
+        jacklog.debug(self)
+        jacklog.error(self)
+        jacklog.info(self)
+        jacklog.warning(self)
         
         (window?.rootViewController as? UINavigationController)?.historyDelegate = self
         
@@ -33,8 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     fileprivate func SwiftyBeaverConfig(){
         let console = ConsoleDestination()  // log to Xcode Console
         let file = FileDestination()  // log to default swiftybeaver.log file
-        jk_log.addDestination(console)
-        jk_log.addDestination(file)
+        jacklog.addDestination(console)
+        jacklog.addDestination(file)
     }
 
 
